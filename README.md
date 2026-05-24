@@ -89,14 +89,8 @@ This prototype was developed through an iterative process. First, the base healt
 - Add caching to reduce API usage.
 - Add user authentication and cloud sync support.
 
-## Screenshots
-
-The submission folder includes screenshots of the main screen, AI Assistant feature, BMI feature, Health Tracker feature, and Period Tracker feature.
-
-## Submission Evidence
-
-This submission includes Android Studio project files, GitHub repository, README.md, screenshots, demo video, and presentation video.
 
 ## Author
-
+Thuy Tien Ngo  
+Student ID: 224899442  
 SIT305 Task 8.2HD - VistaCareAI Prototype
