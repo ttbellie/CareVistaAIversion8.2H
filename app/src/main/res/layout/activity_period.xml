@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAF2FF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📅 PERIOD TRACKER"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#1A2BE2"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <Button
+                android:id="@+id/btnPrevMonth"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:text="←"
+                android:textSize="18sp"
+                android:textColor="#1A2BE2"
+                android:backgroundTint="#DCE6FF" />
+
+            <TextView
+                android:id="@+id/txtMonthYear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="MARCH 2026"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#1A2BE2" />
+
+            <Button
+                android:id="@+id/btnNextMonth"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:text="→"
+                android:textSize="18sp"
+                android:textColor="#1A2BE2"
+                android:backgroundTint="#DCE6FF" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="7"
+            android:layout_marginBottom="8dp">
+
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:gravity="center"
+                android:text="Sun" android:textStyle="bold" android:textColor="#1A2BE2"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:gravity="center"
+                android:text="Mon" android:textStyle="bold" android:textColor="#1A2BE2"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:gravity="center"
+                android:text="Tue" android:textStyle="bold" android:textColor="#1A2BE2"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:gravity="center"
+                android:text="Wed" android:textStyle="bold" android:textColor="#1A2BE2"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:gravity="center"
+                android:text="Thu" android:textStyle="bold" android:textColor="#1A2BE2"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:gravity="center"
+                android:text="Fri" android:textStyle="bold" android:textColor="#1A2BE2"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:gravity="center"
+                android:text="Sat" android:textStyle="bold" android:textColor="#1A2BE2"/>
+        </LinearLayout>
+
+        <GridLayout
+            android:id="@+id/calendarGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="7"
+            android:rowCount="6"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnSavePeriod"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Save"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#4F6BED"
+                android:layout_marginEnd="6dp" />
+
+            <Button
+                android:id="@+id/btnClearSelection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Clear"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#4F6BED"
+                android:layout_marginEnd="6dp" />
+
+            <Button
+                android:id="@+id/btnPredict"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Predict"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#4F6BED" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_blue"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/txtSelectedDates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selected dates: none"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtPrediction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#C2185B"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Loading indicator -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="12dp">
+
+            <ProgressBar
+                android:id="@+id/progressPeriod"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:visibility="gone"
+                android:indeterminateTint="#4F6BED" />
+
+            <TextView
+                android:id="@+id/txtLoadingPeriod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Analysing your cycle..."
+                android:textSize="14sp"
+                android:textColor="#4F6BED"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- AI Insight card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_blue"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/txtAiInsight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#333333"
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="History"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1A2BE2"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_blue"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/txtHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No saved history yet."
+                android:textColor="#333333"
+                android:textSize="15sp"
+                android:lineSpacingExtra="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
